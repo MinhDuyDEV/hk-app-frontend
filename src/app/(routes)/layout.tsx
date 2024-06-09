@@ -1,4 +1,5 @@
 import HeaderMain from "@/components/utils/header/HeaderMain";
+import Sidebar from "@/components/utils/sidebar/Sidebar";
 
 export default function HomeLayout({
   children,
@@ -13,14 +14,11 @@ export default function HomeLayout({
         </div>
       </div>
       <div className='relative h-full'>
-        <div className='flex justify-start'>
-          <div className='flex-col w-64 flex-shrink-0 lg:block hidden'>
-            side bar Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ex, aliquid accusamus, cum laudantium explicabo quidem qui
-            laboriosam ad enim nostrum voluptas, similique illo ratione maiores
-            totam sequi tenetur dignissimos quo!
+        <div className='flex h-full'>
+          <div className='flex-col lg:flex hidden transition-all h-full'>
+            <Sidebar />
           </div>
-          <div className='col-auto'>{children}</div>
+          <div className='flex-1'>{children}</div>
         </div>
       </div>
     </div>
