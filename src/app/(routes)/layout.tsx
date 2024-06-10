@@ -7,9 +7,9 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className='relative bg-gray-200 dark:bg-gray-900 w-full min-h-dvh'>
+    <div className='relative bg-background dark:bg-gray-900 w-full min-h-dvh'>
       <div className='w-full h-20'>
-        <div className='fixed w-full top-0 bg-gray-200 dark:bg-gray-900 z-50'>
+        <div className='fixed w-full top-0 bg-background dark:bg-gray-900 z-50'>
           <HeaderMain />
         </div>
       </div>
@@ -18,7 +18,7 @@ export default function HomeLayout({
           <div className='flex-col lg:flex hidden transition-all h-full'>
             <Sidebar />
           </div>
-          <div className='flex-1'>{children}</div>
+          <div className='flex-1 '>{children}</div>
         </div>
       </div>
     </div>

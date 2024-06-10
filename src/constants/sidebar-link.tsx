@@ -13,6 +13,11 @@ export const sidebarLinks: TSidebarLink[] = [
     path: "/product",
   },
   {
+    title: "Tasks",
+    icon: <BaggageClaim />,
+    path: "/tasks",
+  },
+  {
     title: "Settings",
     icon: <Settings />,
     path: "/settings",
