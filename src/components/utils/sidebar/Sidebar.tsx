@@ -14,26 +14,31 @@ export default function Sidebar() {
   const [isHidden, setIsHidden] = useState(false);
   const pathname = usePathname();
   return (
-    <div className='relative flex flex-col items-center justify-start h-full p-8'>
-      <div className='absolute top-1/2 right-0 translate-x-6 p-1 bg-gray-600 dark:bg-gray-200 text-slate-200 dark:text-slate-600 rounded-full'>
+    <div
+      className={cn(
+        "hidden lg:flex flex-col items-center justify-start gap-3 p-8 transition-all duration-300 sticky top-20 h-full",
+        isHidden ? "w-0" : "w-64"
+      )}
+    >
+      <div className="absolute top-1/2 right-0 translate-x-6 p-1 bg-gray-600 dark:bg-gray-200 text-slate-200 dark:text-slate-600 rounded-full">
         {isHidden ? (
           <span
-            className='cursor-pointer'
+            className="cursor-pointer"
             onClick={() => setIsHidden(!isHidden)}
           >
-            <ArrowBigRight className='h-6 w-6 transition-all' />
+            <ArrowBigRight className="h-6 w-6" />
           </span>
         ) : (
           <span
-            className='cursor-pointer'
+            className="cursor-pointer"
             onClick={() => setIsHidden(!isHidden)}
           >
-            <ArrowBigLeft className='h-6 w-6 transition-all' />
+            <ArrowBigLeft className="h-6 w-6" />
           </span>
         )}
       </div>
-      <div className='flex flex-col items-center gap-5'>
-        <div className='flex flex-col transition-all gap-5'>
+      <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col gap-5">
           {sidebarLinks.map((link: TSidebarLink) => (
             <SidebarLink
               key={link.title}
